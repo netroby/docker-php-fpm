@@ -1,4 +1,4 @@
 # Docker with php-fpm installed
 
 
-Update 2015-12-24
+Update 2016-02-22
