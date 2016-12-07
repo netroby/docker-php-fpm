@@ -10,8 +10,7 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install gd \
     && pecl install apcu \
     && pecl install yaf \
-    && pecl install yac \
-    && docker-php-ext-enable  opcache apcu yaf yac
+    && docker-php-ext-enable  opcache apcu yaf
 
 COPY php-fpm.conf /usr/local/etc/
 COPY php.ini /usr/local/etc/php/
