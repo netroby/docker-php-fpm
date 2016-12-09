@@ -13,7 +13,8 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install bcmath \
     && pecl install apcu \
     && pecl install yaf \
-    && docker-php-ext-enable  opcache apcu yaf
+    && pecl install redis \
+    && docker-php-ext-enable  opcache apcu yaf redis
 
 COPY php-fpm.conf /usr/local/etc/
 COPY php.ini /usr/local/etc/php/
