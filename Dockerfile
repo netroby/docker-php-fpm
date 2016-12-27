@@ -27,9 +27,12 @@ RUN apt-get update && apt-get install -y \
     && pecl install mongodb \
     && git clone https://github.com/php-memcached-dev/php-memcached /usr/src/php/ext/memcached \
     && cd /usr/src/php/ext/memcached && git checkout -b php7 origin/php7 \
+    && git clone --depth=1 git://github.com/phalcon/cphalcon.git /usr/src/php/ext/cphalcon \
+    && cd /usr/src/php/ext/cphalcon \
+    && ./install \
     && docker-php-ext-configure memcached \
     && docker-php-ext-install memcached \
-    && docker-php-ext-enable  opcache apcu yaf redis mongodb 
+    && docker-php-ext-enable  opcache apcu yaf redis mongodb phalcon
 
 COPY php-fpm.conf /usr/local/etc/
 COPY php.ini /usr/local/etc/php/
