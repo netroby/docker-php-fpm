@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install intl \
     && docker-php-ext-configure xsl \
     && docker-php-ext-install xsl \
-    && pecl install apcu \
+    && pecl install apcu-4.0.11 \
     && pecl install yaf \
     && pecl install redis \
     && pecl install mongo \
