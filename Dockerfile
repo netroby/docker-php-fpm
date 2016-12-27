@@ -21,13 +21,12 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-configure xsl \
     && docker-php-ext-install xsl \
     && pecl install apcu-4.0.11 \
-    && pecl install yaf-2.3.5 \
     && pecl install redis \
     && pecl install mongo \
     && pecl install mongodb \
     && pecl install memcache \
     && pecl install memcached \
-    && docker-php-ext-enable  opcache apcu yaf redis mongo mongodb memcache memcached
+    && docker-php-ext-enable  opcache apcu redis mongo mongodb memcache memcached
 
 COPY php-fpm.conf /usr/local/etc/
 COPY php.ini /usr/local/etc/php/
