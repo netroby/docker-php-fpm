@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y \
         libcurl4-openssl-dev \
         libicu-dev \
         libxslt-dev \
+        libmemcached-dev  \
     && docker-php-ext-install curl iconv mcrypt mbstring mysqli pdo pdo_mysql zip \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install gd \
@@ -20,7 +21,16 @@ RUN apt-get update && apt-get install -y \
     && pecl install apcu \
     && pecl install yaf \
     && pecl install redis \
-    && docker-php-ext-enable  opcache apcu yaf redis
+    && pecl install mongo \
+    && pecl install mongodb \
+    && pecl install memcache \
+    && pecl install memcached \
+    && docker-php-ext-enable  opcache apcu yaf redis mongo mongodb memcache memcached
+
+COPY php-fpm.conf /usr/local/etc/
+COPY php.ini /usr/local/etc/php/
+CMD ["php-fpm"]
+
 
 COPY php-fpm.conf /usr/local/etc/
 COPY php.ini /usr/local/etc/php/
