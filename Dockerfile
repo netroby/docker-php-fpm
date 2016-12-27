@@ -21,7 +21,6 @@ RUN apt-get update && apt-get install -y \
     && pecl install apcu \
     && pecl install yaf \
     && pecl install redis \
-    && pecl install mongo \
     && pecl install mongodb \
     && pecl install memcache \
     && pecl install memcached \
