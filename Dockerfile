@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-configure xsl \
     && docker-php-ext-install xsl \
     && pecl install apcu-4.0.11 \
-    && pecl install yaf \
+    && pecl install yaf-2.3.5 \
     && pecl install redis \
     && pecl install mongo \
     && pecl install mongodb \
