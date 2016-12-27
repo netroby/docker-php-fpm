@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y \
         libmcrypt-dev \
         libpng12-dev \
         libcurl4-openssl-dev \
+        libssl-dev \
         libicu-dev \
         libxslt-dev \
         libmemcached-dev  \
