@@ -28,7 +28,7 @@ RUN apt-get update && apt-get install -y \
     && pecl install memcache \
     && pecl install memcached \
     && pecl install xdebug \
-    && pecl install xhprof \
+    && pecl install xhprof-0.9.4 \
     && git clone --depth=1 git://github.com/phalcon/cphalcon.git \
     && cd cphalcon/build \
     && ./install \
