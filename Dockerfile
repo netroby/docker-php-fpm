@@ -27,10 +27,12 @@ RUN apt-get update && apt-get install -y \
     && pecl install mongodb \
     && pecl install memcache \
     && pecl install memcached \
+    && pecl install xdebug \
+    && pecl install xhprof \
     && git clone --depth=1 git://github.com/phalcon/cphalcon.git \
     && cd cphalcon/build \
     && ./install \
-    && docker-php-ext-enable  opcache apcu redis mongo mongodb memcache memcached phalcon
+    && docker-php-ext-enable  opcache apcu redis mongo mongodb memcache memcached phalcon xdebug xhprof
 
 COPY php-fpm.conf /usr/local/etc/
 COPY php.ini /usr/local/etc/php/
