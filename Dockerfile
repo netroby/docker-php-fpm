@@ -25,7 +25,7 @@ RUN apt-get update && apt-get install -y \
     && pecl install yaf \
     && pecl install redis \
     && pecl install mongodb \
-    && pecl install xhprof \
+    && pecl install xhprof-0.9.4 \
     && pecl install xdebug \
     && git clone https://github.com/php-memcached-dev/php-memcached /usr/src/php/ext/memcached \
     && cd /usr/src/php/ext/memcached && git checkout -b php7 origin/php7 \
