@@ -41,6 +41,3 @@ COPY php.ini /usr/local/etc/php/
 CMD ["php-fpm"]
 
 
-COPY php-fpm.conf /usr/local/etc/
-COPY php.ini /usr/local/etc/php/
-CMD ["php-fpm"]
