@@ -27,7 +27,7 @@ RUN apt-get update && apt-get install -y \
     && pecl install mongo \
     && pecl install mongodb \
     && pecl install memcache \
-    && pecl install memcached \
+    && pecl install memcached-2.2.0 \
     && pecl install xdebug \
     && pecl install channel://pecl.php.net/xhprof-0.9.4 \
     && git clone --depth=1 git://github.com/phalcon/cphalcon.git \
