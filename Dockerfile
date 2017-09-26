@@ -29,6 +29,8 @@ RUN apt-get update && apt-get install -y \
     && pecl install memcache \
     && pecl install memcached-2.2.0 \
     && pecl install xdebug \
+    && pecl install grpc \
+    && pecl install protobuf \
     && pecl install channel://pecl.php.net/xhprof-0.9.4 \
     && git clone --depth=1 git://github.com/phalcon/cphalcon.git \
     && cd cphalcon/build \
