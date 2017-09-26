@@ -27,6 +27,8 @@ RUN apt-get update && apt-get install -y \
     && pecl install redis \
     && pecl install mongodb \
     && pecl install xdebug \
+    && pecl install protobuf \
+    && pecl install grpc \
     && git clone https://github.com/php-memcached-dev/php-memcached /usr/src/php/ext/memcached \
     && cd /usr/src/php/ext/memcached && git checkout -b php7 origin/php7 \
     && git clone --depth=1 git://github.com/phalcon/cphalcon.git /usr/src/php/ext/cphalcon \
