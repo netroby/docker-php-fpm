@@ -35,7 +35,7 @@ RUN apt-get update && apt-get install -y \
     && git clone --depth=1 git://github.com/phalcon/cphalcon.git \
     && cd cphalcon/build \
     && ./install \
-    && docker-php-ext-enable  opcache apcu redis mongo mongodb memcache memcached phalcon xdebug xhprof
+    && docker-php-ext-enable  opcache apcu redis mongo mongodb memcache memcached phalcon xdebug xhprof protobuf
 
 COPY php-fpm.conf /usr/local/etc/
 COPY php.ini /usr/local/etc/php/
