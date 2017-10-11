@@ -36,7 +36,7 @@ RUN apt-get update && apt-get install -y \
     && ./install \
     && docker-php-ext-configure memcached \
     && docker-php-ext-install memcached \
-    && docker-php-ext-enable  opcache apcu yaf redis mongodb phalcon xdebug
+    && docker-php-ext-enable  opcache apcu yaf redis mongodb phalcon xdebug protobuf
 
 COPY php-fpm.conf /usr/local/etc/
 COPY php.ini /usr/local/etc/php/
