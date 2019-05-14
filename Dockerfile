@@ -38,7 +38,7 @@ RUN apt-get update && apt-get install -y \
     && git clone https://github.com/php-memcached-dev/php-memcached /usr/src/php/ext/memcached \
     && docker-php-ext-configure memcached \
     && docker-php-ext-install memcached \
-    && docker-php-ext-enable  opcache apcu redis mongodb phalcon xdebug imagick 
+    && docker-php-ext-enable  opcache apcu redis mongodb xdebug imagick 
 
 
 RUN curl -sS https://getcomposer.org/installer | php 
