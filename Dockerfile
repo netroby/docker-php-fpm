@@ -1,4 +1,4 @@
-FROM php:7.0-fpm
+FROM php:7.3-fpm
 # Install modules
 RUN apt-get update && apt-get install -y \
         libfreetype6-dev \
@@ -30,6 +30,8 @@ RUN apt-get update && apt-get install -y \
     && pecl install mongodb \
     && pecl install xdebug \
     && pecl install protobuf \
+    && pecl install apcu \
+    && pecl install imagick \
     && git clone https://github.com/php-memcached-dev/php-memcached /usr/src/php/ext/memcached \
     && cd /usr/src/php/ext/memcached && git checkout -b php7 origin/php7 \
     && git clone --depth=1 git://github.com/phalcon/cphalcon.git /usr/src/php/ext/cphalcon \
@@ -37,7 +39,7 @@ RUN apt-get update && apt-get install -y \
     && ./install \
     && docker-php-ext-configure memcached \
     && docker-php-ext-install memcached \
-    && docker-php-ext-enable  opcache apcu yaf redis mongodb phalcon xdebug protobuf 
+    && docker-php-ext-enable  opcache apcu yaf redis mongodb phalcon xdebug protobuf  imagick 
 RUN pecl install -f grpc-1.7.0RC1 && docker-php-ext-enable grpc
 
 RUN wget https://github.com/google/protobuf/releases/download/v3.4.1/protobuf-php-3.4.1.tar.gz \
